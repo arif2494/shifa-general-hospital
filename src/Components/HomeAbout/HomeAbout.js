@@ -19,7 +19,7 @@ const HomeAbout = () => {
 							specialized consultation facilities under a single roof through its now ubiquitous centers
 							in all corners of Bangladesh. Around 2.1
 						</p>
-						<button className="bg-black flex text-white px-6 py-3 font-medium">Read More</button>
+						<button className="bg-black flex text-white px-6 py-3 font-medium ">Read More</button>
 					</div>
 					<div className="flex items-center  justify-center ">
 						<img src={doctor} alt="!" className="h-full" />
