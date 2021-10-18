@@ -14,7 +14,7 @@ const Appoinment = () => {
 								<div className="flex flex-wrap -m-2">
 									<div className="p-2 w-1/2">
 										<div className="relative">
-											<label for="name" className="leading-7 text-sm text-gray-600">
+											<label htmlFor="name" className="leading-7 text-sm text-gray-600">
 												Name
 											</label>
 											<input
@@ -25,7 +25,7 @@ const Appoinment = () => {
 											/>
 										</div>
 										<div className="relative">
-											<label for="phone" className="leading-7 text-sm text-gray-600">
+											<label htmlFor="phone" className="leading-7 text-sm text-gray-600">
 												Phone
 											</label>
 											<input
@@ -38,7 +38,7 @@ const Appoinment = () => {
 									</div>
 									<div className="p-2 w-1/2">
 										<div className="relative">
-											<label for="email" className="leading-7 text-sm text-gray-600">
+											<label htmlFor="email" className="leading-7 text-sm text-gray-600">
 												Email
 											</label>
 											<input
@@ -49,7 +49,7 @@ const Appoinment = () => {
 											/>
 										</div>
 										<div className="relative">
-											<label for="date" className="leading-7 text-sm text-gray-600">
+											<label htmlFor="date" className="leading-7 text-sm text-gray-600">
 												Appoinment Date
 											</label>
 											<input
@@ -62,7 +62,7 @@ const Appoinment = () => {
 									</div>
 									<div className="p-2 w-full">
 										<div className="relative">
-											<label for="message" className="leading-7 text-sm text-gray-600">
+											<label htmlFor="message" className="leading-7 text-sm text-gray-600">
 												Message
 											</label>
 											<textarea

@@ -5,6 +5,7 @@ import Appoinment from './Components/Appoinment/Appoinment';
 import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
+import ServiceDetails from './Components/ServiceDetails/ServiceDetails';
 import ServiceProvider from './context/ServiceProvider';
 
 function App() {
@@ -15,6 +16,9 @@ function App() {
 				<Switch>
 					<Route exact path="/">
 						<Home />
+					</Route>
+					<Route path="/services/:id">
+						<ServiceDetails />
 					</Route>
 					<Route path="/about">
 						<About />

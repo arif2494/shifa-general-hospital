@@ -24,6 +24,6 @@
 }
 
 /* about page list */
-.tick-list li {
+.tick-list {
 	list-style-image: url('./img/icons/tick.png');
 }
