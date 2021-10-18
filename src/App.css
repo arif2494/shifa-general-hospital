@@ -5,3 +5,12 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 }
+
+/* overview */
+.overView {
+	background-image: url('./img/overView.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	height: 300px;
+}
