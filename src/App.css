@@ -1,1 +1,7 @@
-
+/* home banner section */
+.hero-banner {
+	background-image: url('./img/doctor.jpg');
+	height: 640px;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
