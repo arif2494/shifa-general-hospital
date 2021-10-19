@@ -5,7 +5,7 @@ import useAuth from '../../hooks/useAuth';
 import PageHeader from '../PageHeader/PageHeader';
 
 const Login = () => {
-const {setIsLoading, signinUsingGoogle, signUpWithEmailAndPassword ,loginWithEmailAndPassword,setUSerName,setUser} = useAuth();
+const {setIsLoading, signinUsingGoogle, signUpWithEmailAndPassword ,loginWithEmailAndPassword,setUser} = useAuth();
 	const location = useLocation();
 	const history = useHistory();
 	const redirect_uri = location.state?.from || '/';
@@ -32,16 +32,8 @@ const[check, setCheck]= useState(null)
  	
 	.then((result) => {
 	const user = result.user;
-		setUSerName(data.name)	
-		.then(() => {
-				setUser(user);
-	history.push(redirect_uri);
-			})
-			.catch((error) => {
-				// An error occurred
-				// ...
-			}).finally(()=> setIsLoading(false))
-
+	setUser(user)
+		history.push(redirect_uri);
 			})
 			.catch((error) => {
 				const errorMessage = error.message;
@@ -81,21 +73,23 @@ setCheck(checked)
             </div>
 						{/* login form */}
 						<div className="mt-12">
-							<h1 className="text-3xl font-medium mb-4 text-center dark:text-gray-200">Sign Up</h1>
+							<h1 className="text-3xl font-medium mb-4 text-center dark:text-gray-200">{
+								check ? 'login' :'Sign Up' 
+}</h1>
 							<form
 								onSubmit={check ? handleSubmit(handleLogin) : handleSubmit(handleSignUp)}
 								className="flex flex-col items-center pb-6"
 							>
-								{check || (
+								{/* {check || (
 									<input
-										className="p-3 bg-gray-600 w-80 mb-6 border border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent rounded-md"
+										className="p-3 bg-gray-100 w-80 mb-6 border border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent rounded-md"
 										placeholder="Type Your Name"
 										{...register('name', { required: true })}
 										type="text"
 									/>
-								)}
+								)} */}
 								<input
-									className="p-3 bg-gray-600 w-80 mb-6 border border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent rounded-md"
+									className="p-3 bg-gray-100 w-80 mb-6 border border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent rounded-md"
 									placeholder="Type Email"
 									{...register('email', { required: true })}
 									type="email"
@@ -103,7 +97,7 @@ setCheck(checked)
 								{errors.email && <span className="text-red-600">Please Enter Email Address</span>}
 
 								<input
-									className="p-3 bg-gray-600 w-80 border border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent rounded-md"
+									className="p-3 bg-gray-100 w-80 border border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent rounded-md"
 									placeholder="Type Password"
 									type="password"
 									{...register('password', { required: true })}
