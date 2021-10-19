@@ -7,12 +7,12 @@ const About = () => {
 		<div>
 			<PageHeader>About Us</PageHeader>
 			<div className="container mx-auto">
-				<div className="grid grid-cols-2 py-6 gap-4">
+				<div className="grid grid-cols-1 md:grid-cols-2 py-6 gap-4">
 					<div>
 						<img src={about} alt="!" />
 					</div>
 					<div className="flex items-center">
-						<div>
+						<div className="m-2">
 							<h4 className="text-2xl text-gray-600">Welcome to Shefa General Hospital</h4>
 							<h2 className="text-4xl text-gray-800 my-3">
 								Shefa holds the privilage of being Chicago's first choice hospital
@@ -40,9 +40,9 @@ const About = () => {
 					</div>
 				</div>
 				{/* 2nd grid */}
-				<div className="grid grid-cols-2 gap-4 my-6 ">
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6 ">
 					<div className="flex items-center">
-						<div>
+						<div className="m-2">
 							<h4 className="text-2xl text-gray-600">For mom and baby</h4>
 							<h2 className="text-4xl text-gray-800 my-3">Leading Edge Care</h2>
 							<p className="text-xl text-gray-600 my-3">

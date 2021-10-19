@@ -7,8 +7,8 @@ const OverView = () => {
 	return (
 		<div className="overView">
 			<div className="container mx-auto">
-				<div className="grid grid-cols-4 flex items-center h-80">
-					<div className=" flex flex-col items-center ">
+				<div className="grid grid-cols-2 md:grid-cols-4 flex items-center over-view">
+					<div className=" flex flex-col  items-center ">
 						<img src={patient} alt="!" className="w-20" />
 						<p className="text-4xl font-medium text-white mt-2">5K Patient Treated</p>
 					</div>

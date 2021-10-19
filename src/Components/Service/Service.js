@@ -5,7 +5,7 @@ const Service = (props) => {
 	const { name, img, desc, id } = props.service;
 	const url = `/services/${id}`;
 	return (
-		<div className="bg-gray-100 p-4 rounded-2xl">
+		<div className="bg-gray-100 p-4 rounded-2xl m-2">
 			<img src={img} alt="!" className="rounded-2xl" />
 			<div className="mt-3">
 				<h2 className="text-3xl text-gray-700">{name}</h2>

@@ -1,16 +1,21 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { useLocation } from 'react-router';
+import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import OffcanvasMenu from 'react-offcanvas-menu-component';
+
 
 const Header = () => {
 	const { user ,logOut} = useAuth()
+		const location = useLocation();
 	return (
 		<div className=" bg-black sticky top-0">
 			<header className="mx-auto container">
 				<nav>
 					<ul className="list-none flex justify-between py-6">
-						<div className="inline-block">
-							<li className="inline-block  ">
+						<div className="inline-block ">
+						<div className='hidden lg:block'>
+								<li className="inline-block  ">
 								<NavLink className=" hover:bg-gray-600 text-2xl text-white px-6 py-6" to="/">
 									Home
 								</NavLink>
@@ -40,6 +45,7 @@ const Header = () => {
 							
 							</li>
 						</div>
+						</div>
 						<div className="inline-block">
 							<li className="inline-block ">
 								<NavLink className=" hover:bg-gray-600 text-2xl text-white px-6 py-6" to="/">
@@ -50,6 +56,27 @@ const Header = () => {
 					</ul>
 				</nav>
 			</header>
+				{/* off canvas */}
+			<div className="lg:hidden block">
+				<OffcanvasMenu
+					Link={Link} // react-router-dom Link
+					location={location} // location parameter passed from Router
+					config={{
+						width: 300, // you can modify default width
+						push: true // if you want to enable push feature
+					}}
+					// this is where you create your menu items
+					menu={[
+						// basic menu item
+						{ text: 'Home', link: '/' },
+						{ text: '	Appoinment', link: '/appoinment' },
+						{ text: 'About', link: '/about' },
+						{ text: '	Login', link: '/login' },
+	
+					]}
+				
+				/>
+			</div>
 		</div>
 	);
 };

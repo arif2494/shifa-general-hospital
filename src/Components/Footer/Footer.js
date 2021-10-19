@@ -5,7 +5,7 @@ const Footer = () => {
 		<div className="bg-black text-white">
 			<footer className="py-16">
 				<div className="container mx-auto">
-					<div className="grid grid-cols-4 divide-x-2 divide-yellow-600">
+					<div className="grid grid-cols-1 md:grid-cols-4 divide-x-2 divide-yellow-600">
 						<div className="px-8">
 							<h3 className="text-2xl mb-4">Our Pages</h3>
 							<ul className="list-none text-lg">
@@ -14,7 +14,7 @@ const Footer = () => {
 								<li>Appoinment</li>
 							</ul>
 						</div>
-						<div className="col-span-2 px-8 flex flex-col items-center">
+						<div className="col-span-2 my-3 px-8 flex flex-col items-center">
 							<img src={logo} alt="!" className="w-20" />
 							<p className="text-justify">
 								Shifa General Hospital is one of the largest and most recognized private healthcare
