@@ -10,38 +10,35 @@ import PageNotFound from './Components/PageNotFound/PageNotFound';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import ServiceDetails from './Components/ServiceDetails/ServiceDetails';
 import AuthProvider from './context/AuthProvider';
-import ServiceProvider from './context/ServiceProvider';
 
 function App() {
 	return (
-		<ServiceProvider>
-			<AuthProvider>
-				<Router>
-					<Header />
-					<Switch>
-						<Route exact path="/">
-							<Home />
-						</Route>
-						<PrivateRoute path="/services/:id">
-							<ServiceDetails />
-						</PrivateRoute>
-						<Route path="/about">
-							<About />
-						</Route>
-						<Route path="/appoinment">
-							<Appoinment />
-						</Route>
-						<Route path="/login">
-							<Login />
-						</Route>
-						<Route path="*">
-							<PageNotFound />
-						</Route>
-					</Switch>
-					<Footer />
-				</Router>
-			</AuthProvider>
-		</ServiceProvider>
+		<AuthProvider>
+			<Router>
+				<Header />
+				<Switch>
+					<Route exact path="/">
+						<Home />
+					</Route>
+					<PrivateRoute path="/services/:id">
+						<ServiceDetails />
+					</PrivateRoute>
+					<Route path="/about">
+						<About />
+					</Route>
+					<Route path="/appoinment">
+						<Appoinment />
+					</Route>
+					<Route path="/login">
+						<Login />
+					</Route>
+					<Route path="*">
+						<PageNotFound />
+					</Route>
+				</Switch>
+				<Footer />
+			</Router>
+		</AuthProvider>
 	);
 }
 
