@@ -8,6 +8,7 @@ const About = () => {
 			<PageHeader>About Us</PageHeader>
 			<div className="container mx-auto">
 				<div className="grid grid-cols-1 md:grid-cols-2 py-6 gap-4">
+					{/* first grid */}
 					<div>
 						<img src={about} alt="!" />
 					</div>

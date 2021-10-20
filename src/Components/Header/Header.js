@@ -7,26 +7,28 @@ import OffcanvasMenu from 'react-offcanvas-menu-component';
 
 const Header = () => {
 	const { user ,logOut} = useAuth()
+	const photo = user?.photoURL
 		const location = useLocation();
 	return (
+		// navbar
 		<div className=" bg-black sticky top-0">
 			<header className="mx-auto container">
-				<nav>
-					<ul className="list-none flex justify-between py-6">
+				<nav className='py-6'>
+					<ul className="list-none flex justify-between">
 						<div className="inline-block ">
-						<div className='hidden lg:block'>
+						<div className='hidden lg:block '>
 								<li className="inline-block  ">
-								<NavLink className=" hover:bg-gray-600 text-2xl text-white px-6 py-6" to="/">
+								<NavLink className=" hover:bg-gray-600 text-2xl text-white px-6 py-4" to="/">
 									Home
 								</NavLink>
 							</li>
 							<li className="inline-block  ">
-								<NavLink className=" hover:bg-gray-600 text-2xl text-white px-6 py-6" to="/about">
+								<NavLink className=" hover:bg-gray-600 text-2xl text-white px-6 py-4" to="/about">
 									About
 								</NavLink>
 							</li>
 							<li className="inline-block  ">
-								<NavLink className=" hover:bg-gray-600 text-2xl text-white px-6 py-6" to="/appoinment">
+								<NavLink className=" hover:bg-gray-600 text-2xl text-white px-6 py-4" to="/appoinment">
 									Appoinment
 								</NavLink>
 							</li>
@@ -34,7 +36,7 @@ const Header = () => {
 							user?.email ? 	<li className="inline-block   text-2xl text-white ">
 								<button className='hover:bg-gray-600 px-6 ' onClick={logOut}>Logout</button>
 							</li> : 	<li className="inline-block  ">
-								<NavLink className=" hover:bg-gray-600 text-2xl text-white px-6 py-6" to="/login">
+								<NavLink className=" hover:bg-gray-600 text-2xl text-white px-6 py-4" to="/login">
 									Login
 								</NavLink>
 							</li>
@@ -46,12 +48,18 @@ const Header = () => {
 							</li>
 						</div>
 						</div>
-						<div className="inline-block">
+						<div className="inline-block flex items-center">
 							<li className="inline-block ">
-								<NavLink className=" hover:bg-gray-600 text-2xl text-white px-6 py-6" to="/">
+								<NavLink className=" hover:bg-gray-600 text-2xl text-white px-6 py-4" to="/">
 									SHEFA GENERAL HOSPITAL
 								</NavLink>
 							</li>
+							{/* show photo if have */}
+							{
+								photo && <li className="inline-block ">
+								<img src={photo} alt="!" className='w-12 rounded-full' />
+							</li>
+							}
 						</div>
 					</ul>
 				</nav>

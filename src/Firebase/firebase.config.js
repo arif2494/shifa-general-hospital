@@ -1,10 +1,10 @@
 const firebaseConfig = {
-	apiKey: 'AIzaSyD1A7c2TuqRPmymlyKasRo9x8w_RRVkzVw',
-	authDomain: 'shifa-general-hospital.firebaseapp.com',
-	projectId: 'shifa-general-hospital',
-	storageBucket: 'shifa-general-hospital.appspot.com',
-	messagingSenderId: '137092233974',
-	appId: '1:137092233974:web:ca1535b4def39ebe45cad7'
+	apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+	authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+	projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+	storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+	messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+	appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
 export default firebaseConfig;

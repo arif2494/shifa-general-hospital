@@ -7,9 +7,13 @@ import Services from '../Services/Services';
 const Home = () => {
 	return (
 		<div>
+			{/* banner */}
 			<Banner />
+			{/* short about  */}
 			<HomeAbout />
+			{/* all services */}
 			<Services />
+			{/* simple overview */}
 			<OverView />
 		</div>
 	);

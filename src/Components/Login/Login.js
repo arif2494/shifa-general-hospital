@@ -10,6 +10,7 @@ const {setIsLoading, signinUsingGoogle, signUpWithEmailAndPassword ,loginWithEma
 	const history = useHistory();
 	const redirect_uri = location.state?.from || '/';
 const[check, setCheck]= useState(null)
+const[displayError, setDisplayError] = useState('')
 
 // google sign in
 	const handleGoogleSignIn = () => {
@@ -21,7 +22,7 @@ const[check, setCheck]= useState(null)
 			})
 			.catch((error) => {
 				const errorMessage = error.message;
-				console.log(errorMessage);
+				setDisplayError(errorMessage);
 			}).finally(()=> setIsLoading(false))
 	};
   	// form hook
@@ -37,7 +38,7 @@ const[check, setCheck]= useState(null)
 			})
 			.catch((error) => {
 				const errorMessage = error.message;
-				console.log(errorMessage);
+				setDisplayError(errorMessage);
 			}).finally(()=> setIsLoading(false))
 
 	};
@@ -53,7 +54,7 @@ loginWithEmailAndPassword(data.email,data.password)
 			})
 			.catch((error) => {
 				const errorMessage = error.message;
-				console.log(errorMessage);
+			setDisplayError(errorMessage);
 			}).finally(()=> setIsLoading(false))
 }
 
@@ -73,6 +74,7 @@ setCheck(checked)
             </div>
 						{/* login form */}
 						<div className="mt-12">
+							{displayError && <p className='text-center text-red-700'>{displayError}</p>}
 							<h1 className="text-3xl font-medium mb-4 text-center dark:text-gray-200">{
 								check ? 'login' :'Sign Up' 
 }</h1>
@@ -80,14 +82,7 @@ setCheck(checked)
 								onSubmit={check ? handleSubmit(handleLogin) : handleSubmit(handleSignUp)}
 								className="flex flex-col items-center pb-6"
 							>
-								{/* {check || (
-									<input
-										className="p-3 bg-gray-100 w-80 mb-6 border border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent rounded-md"
-										placeholder="Type Your Name"
-										{...register('name', { required: true })}
-										type="text"
-									/>
-								)} */}
+								
 								<input
 									className="p-3 bg-gray-100 w-80 mb-6 border border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent rounded-md"
 									placeholder="Type Email"

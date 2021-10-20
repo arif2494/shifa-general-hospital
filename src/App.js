@@ -20,15 +20,16 @@ function App() {
 					<Route exact path="/">
 						<Home />
 					</Route>
+					{/* dynamic ptivate route */}
 					<PrivateRoute path="/services/:id">
 						<ServiceDetails />
 					</PrivateRoute>
-					<Route path="/about">
+					<PrivateRoute path="/about">
 						<About />
-					</Route>
-					<Route path="/appoinment">
+					</PrivateRoute>
+					<PrivateRoute path="/appoinment">
 						<Appoinment />
-					</Route>
+					</PrivateRoute>
 					<Route path="/login">
 						<Login />
 					</Route>

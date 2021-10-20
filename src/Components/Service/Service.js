@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Service = (props) => {
+	// destructure
 	const { name, img, desc, id } = props.service;
 	const url = `/services/${id}`;
 	return (

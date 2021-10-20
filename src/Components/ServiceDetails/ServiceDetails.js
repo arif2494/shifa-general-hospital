@@ -5,6 +5,7 @@ import PageHeader from '../PageHeader/PageHeader';
 const ServiceDetails = () => {
 	const [ service, setService ] = useState({});
 	const { id } = useParams();
+	// load all data and math the required
 	useEffect(
 		() => {
 			fetch('https://raw.githubusercontent.com/arif2494/hospital-data/main/data.json')
@@ -20,6 +21,7 @@ const ServiceDetails = () => {
 
 	return (
 		<div>
+			{/* shoe details */}
 			<PageHeader>Service Details</PageHeader>
 			<div className="container mx-auto my-6">
 				<div>

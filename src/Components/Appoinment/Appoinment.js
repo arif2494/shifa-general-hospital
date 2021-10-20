@@ -5,6 +5,7 @@ const Appoinment = () => {
 	return (
 		<div>
 			<PageHeader>Make an appoinment</PageHeader>
+			{/* appoinment form */}
 			<div className="container mx-auto">
 				<h2 className="text-2xl text-gray-600 text-center my-6">Please submit this from for your appoinment</h2>
 				<div className="my-6">
