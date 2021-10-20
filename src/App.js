@@ -14,8 +14,8 @@ import ServiceProvider from './context/ServiceProvider';
 
 function App() {
 	return (
-		<AuthProvider>
-			<ServiceProvider>
+		<ServiceProvider>
+			<AuthProvider>
 				<Router>
 					<Header />
 					<Switch>
@@ -40,8 +40,8 @@ function App() {
 					</Switch>
 					<Footer />
 				</Router>
-			</ServiceProvider>
-		</AuthProvider>
+			</AuthProvider>
+		</ServiceProvider>
 	);
 }
 

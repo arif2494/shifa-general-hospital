@@ -1,9 +1,10 @@
 import React from 'react';
-import useService from '../../hooks/useService';
+// import useService from '../../hooks/useService';
+import useServices from '../../hooks/useServices';
 import Service from '../Service/Service';
 
 const Services = () => {
-	const { services } = useService();
+	const { services } = useServices();
 	return (
 		<div className="bg-gray-200 pb-6">
 			<div className="container mx-auto">

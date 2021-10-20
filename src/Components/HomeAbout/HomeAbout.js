@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import doctor from '../../img/doctor-potrait.png';
 const HomeAbout = () => {
 	return (
@@ -20,7 +21,9 @@ const HomeAbout = () => {
 								specialized consultation facilities under a single roof through its now ubiquitous
 								centers in all corners of Bangladesh. Around 2.1
 							</p>
-							<button className="bg-black flex text-white px-6 py-3 font-medium ">Read More</button>
+							<Link to="/about">
+								<button className="bg-black flex text-white px-6 py-3 font-medium ">Read More</button>
+							</Link>
 						</div>
 					</div>
 					<div className="flex items-center  justify-center ">
